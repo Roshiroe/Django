@@ -1,73 +1,188 @@
-/* Global styles */
+/* Reset and global styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 body {
-    min-height: 100vh;
+    font-family: 'Quicksand', sans-serif;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     transition: background-color 0.5s, color 0.5s;
-    display: flex; /* Ensure body is a flex container */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    flex-direction: column; /* Allow content to stack vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f0f0f0; /* Fallback color */
+    background-image: url('../static/background3.jpg'); /* Adjust path as needed */
 }
 
-/* Header styles */
+.background1 {
+    /* Ensure full screen background */
+    background-size: cover;
+    background-position: center;
+}
+
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 10px 100px; /* Reduced vertical padding */
-    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+    background: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
 }
 
-.deepsleep {
-    font-size: 32px;
+.header .deepsleep {
+    font-size: 24px;
     color: #fff;
     text-decoration: none;
     font-weight: 700;
+    padding: 0 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .navbar a {
-    position: relative;
-    font-size: 18px;
     color: #fff;
+    font-size: 18px;
     font-weight: 500;
     text-decoration: none;
-    margin-left: 40px;
+    padding: 0 10px;
 }
 
-.navbar a::before {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #fff;
-    transition: .3s;
+.navbar a:hover {
+    text-decoration: underline;
 }
 
-.navbar a:hover::before {
+.container {
+    margin-top: 100px; /* Adjust spacing from header */
+    display: flex;
+    justify-content: space-between; /* Adjust to space content */
+    align-items: flex-start; /* Align items to the top */
+    flex-direction: row-reverse; /* Reverse direction for right-to-left layout */
+}
+
+.contact-info {
+    flex: 1; /* Take up remaining space */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px; /* Limit max-width for responsiveness */
+}
+
+.contact-info h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-info .row {
+    margin-bottom: 20px;
+}
+
+.contact-info h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    color: #666;
+}
+
+.social-links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.social-icon img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icon img:hover {
+    transform: scale(1.2);
+}
+
+.contact-box {
+    flex: 1; /* Take up remaining space */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensure full width within container */
+    max-width: 800px; /* Set a max-width for responsiveness */
+}
+
+.contact-box h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.field {
     width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-/* Section styles */
+textarea.field {
+    height: 120px; /* Adjust as needed */
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.text-blue {
+    color: #007bff;
+}
+
+.text-black {
+    color: #000;
+}
+
+.col-md-6 {
+    padding: 0 15px;
+}
+
+.col-md-12 {
+    padding: 0 15px;
+    margin-top: 15px;
+}
+
+/* Global styles from other snippet */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Section styles from other snippet */
 .section {
     padding: 100px 0;
     color: whitesmoke;
@@ -87,7 +202,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* Video section styles */
+/* Video section styles from other snippet */
 #section-video {
     padding: 50px 0;
 }
@@ -99,7 +214,6 @@ body {
     align-items: center;
 }
 
-/* Ensuring the video remains responsive */
 .video-wrapper {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 aspect ratio */
@@ -120,7 +234,7 @@ body {
     border: 0;
 }
 
-/* Project section styles */
+/* Project section styles from other snippet */
 .project-container {
     display: flex;
     flex-direction: column;
@@ -154,67 +268,5 @@ body {
 
 .project-details h1 {
     font-size: 2em;
-    margin-bottom: 5px; /* Adjusted margin bottom */
-}
-
-.project-details p {
-    margin-bottom: 5px; /* Adjusted margin bottom */
-}
-
-.project-details .credits {
-    margin-top: 10px; /* Adjusted margin top */
-}
-
-.project-details .credits p {
-    margin: 3px 0; /* Adjusted margin */
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .header {
-        padding: 10px 50px; /* Reduced vertical padding */
-    }
-
-    .navbar a {
-        margin-left: 20px;
-    }
-
-    .title {
-        font-size: 2.5em;
-    }
-
-    .project-container {
-        flex-direction: column;
-        padding: 10px; /* Further reduced padding for smaller screens */
-    }
-
-    .project-image, .project-details {
-        width: 100%;
-    }
-
-    .project-details {
-        margin-top: 10px; /* Adjusted margin top for spacing */
-    }
-
-    .project-details h1 {
-        font-size: 2em;
-        margin-bottom: 10px; /* Adjusted margin bottom */
-    }
-
-    .project-details p {
-        margin-bottom: 5px; /* Adjusted margin bottom */
-    }
-
-    .project-details .credits {
-        margin-top: 10px; /* Adjusted margin top */
-    }
-
-    .project-details .credits p {
-        margin: 3px 0; /* Adjusted margin */
-    }
-}
-
-/* About Us text color */
-.text-whitesmoke {
-    color: whitesmoke;
+    /* Add your margin-bottom or other styles here */
 }

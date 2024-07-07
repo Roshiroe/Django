@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <title>About Us</title>
+</head>
+<body class="background1" style="background-image: url('{% static 'background3.jpg' %}');">
+
+<header class="header">
+    <a href="#" class="deepsleep">Deep Sleep</a>
+    <nav class="navbar">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'projects' %}">Projects</a>
+        <a href="{% url 'abouts' %}">About Us</a>
+        <a href="{% url 'contacts' %}">Contacts</a>
+    </nav>
+</header>
+
+<section class="container my-5">
+    <div class="contact-info">
+        <h2>Contact Us</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Email</h3>
+                <p><a href="mailto:airpig19@gmail.com" class="text-blue">airpig19@gmail.com</a></p>
+            </div>
+            <div class="col-md-6">
+                <h3>Phone</h3>
+                <p>097706777229</p>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <div class="social-links">
+                    <a href="https://www.facebook.com/roshie.rodrigo" class="social-icon"><img src="{% static 'facebook-icon.png' %}" alt="Facebook"></a>
+                    <a href="https://x.com/roshiroe" class="social-icon"><img src="{% static 'twitter-icon.png' %}" alt="Twitter"></a>
+                    <a href="https://www.instagram.com/roshiroe/" class="social-icon"><img src="{% static 'instagram-icon.png' %}" alt="Instagram"></a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="contact-box">
+                    <h2>Message Us!</h2>
+                    <form action="" method="POST">{% csrf_token %}
+                        <input type="text" class="field" placeholder="Full Name" name="author">
+                        <input type="email" class="field" placeholder="Email" name="title">
+                        <textarea placeholder="Give us feedback" class="field" name="desc"></textarea>
+                        <button type="submit" class="text-black btn">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

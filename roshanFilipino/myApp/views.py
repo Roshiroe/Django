@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.urls import path 
+from django.urls import path
+from .models import AddBook 
 
 # Create your views here.
 
@@ -11,3 +12,15 @@ def projects(request):
 
 def abouts(request):
     return render(request, 'abouts.html')
+
+def contacts(request):
+    if request.method == "POST":
+        Full_Name = request.POST['author']
+        Email = request.POST['title']
+        Give_us_feedback = request.POST['desc']
+
+        new_book = AddBook(author=Full_Name, title=Email, description=Give_us_feedback)
+        new_book.save()
+
+    return render(request, 'contacts.html', {})
+
