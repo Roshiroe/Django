@@ -1,0 +1,220 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-color 0.5s, color 0.5s;
+    display: flex; /* Ensure body is a flex container */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    flex-direction: column; /* Allow content to stack vertically */
+}
+
+/* Header styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 100px; /* Reduced vertical padding */
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.deepsleep {
+    font-size: 32px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: .3s;
+}
+
+.navbar a:hover::before {
+    width: 100%;
+}
+
+/* Section styles */
+.section {
+    padding: 100px 0;
+    color: whitesmoke;
+    text-align: center;
+}
+
+.section_container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align content horizontally */
+}
+
+.title {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+/* Video section styles */
+#section-video {
+    padding: 50px 0;
+}
+
+#section-video .section_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ensuring the video remains responsive */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px; /* Increased max-width for a larger video */
+    background: #000;
+    margin: 0 auto;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Project section styles */
+.project-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px; /* Reduced padding */
+    text-align: center; /* Center align text */
+}
+
+.project-image {
+    margin-bottom: 20px; /* Space between image and text */
+}
+
+.project-image img {
+    max-width: 500px; /* Set your desired maximum width */
+    height: auto;    /* Preserve the aspect ratio */
+    display: block;
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+.project-details {
+    width: 100%;
+    max-width: 500px;
+    color: whitesmoke;
+    background-color: transparent;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Ensure content stacks vertically */
+    align-items: center; /* Center align content */
+}
+
+.project-details h1 {
+    font-size: 2em;
+    margin-bottom: 5px; /* Adjusted margin bottom */
+}
+
+.project-details p {
+    margin-bottom: 5px; /* Adjusted margin bottom */
+}
+
+.project-details .credits {
+    margin-top: 10px; /* Adjusted margin top */
+}
+
+.project-details .credits p {
+    margin: 3px 0; /* Adjusted margin */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 50px; /* Reduced vertical padding */
+    }
+
+    .navbar a {
+        margin-left: 20px;
+    }
+
+    .title {
+        font-size: 2.5em;
+    }
+
+    .project-container {
+        flex-direction: column;
+        padding: 10px; /* Further reduced padding for smaller screens */
+    }
+
+    .project-image, .project-details {
+        width: 100%;
+    }
+
+    .project-details {
+        margin-top: 10px; /* Adjusted margin top for spacing */
+    }
+
+    .project-details h1 {
+        font-size: 2em;
+        margin-bottom: 10px; /* Adjusted margin bottom */
+    }
+
+    .project-details p {
+        margin-bottom: 5px; /* Adjusted margin bottom */
+    }
+
+    .project-details .credits {
+        margin-top: 10px; /* Adjusted margin top */
+    }
+
+    .project-details .credits p {
+        margin: 3px 0; /* Adjusted margin */
+    }
+}
+
+/* About Us text color */
+.text-whitesmoke {
+    color: whitesmoke;
+}

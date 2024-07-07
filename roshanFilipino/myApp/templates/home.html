@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Deep Sleep</title>
+</head>
+<body style="background-image: url('{% static 'background.jpg' %}');">
+
+    <header class="header">
+        <a href="home.html" class="deepsleep">Deep Sleep</a>
+        <nav class="navbar">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'projects' %}">Projects</a>
+            <a href="{% url 'abouts' %}">About Us</a>
+        </nav>
+    </header>
+
+    <section class="section" id="section-content">
+        <div class="section_container">
+            <div class="content">
+                <h1 class="title">
+                    Your World
+                    <br>
+                    <span>Your Way</span>
+                </h1>
+            </div>
+            <div class="video-wrapper">
+                <video width="800" controls autoplay muted loop>
+                    <source src="{% static 'TRDNE.mp4' %}" type="video/mp4">
+                    <source src="{% static 'TRDNE.webm' %}" type="video/webm">
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</body>
+</html>
